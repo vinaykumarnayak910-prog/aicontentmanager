@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
   return (
     <nav
       style={{
@@ -10,6 +11,7 @@ function Navbar() {
     >
       <Link
         to="/"
+        arial-current={location.pathname === "/" ? "page" : undefined}
         style={{
           color: "white",
           marginRight: "20px",
@@ -22,6 +24,7 @@ function Navbar() {
 
       <Link
         to="/generate"
+        arial-current={location.pathname === "/generate" ? "page" : undefined}
         style={{
           color: "white",
           textDecoration: "none",
